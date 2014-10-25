@@ -1,4 +1,6 @@
-## Read the data: it is assumed that the datafiles are in the original directories and sub-directonries wich are:
+## Reading the data
+###################
+## It is assumed that the datafiles are in the original directories and sub-directonries wich are:
 ## "UCI HAR Dataset": features and activity labels files
 ## "UCI HAR Dataset/train": training subject, training set and lablels files
 ## "UCI HAR Dataset/test": test subject, test set and lablels files
@@ -67,6 +69,10 @@ names(testSet)[1:3]<-c("SetName", "SubjectId", "ActivityName")
 
 ## Merge the train and test sets
 tidySet<-tbl_df(rbind(trainSet, testSet))
+
+## Write dataset to file
+setwd("../")
+write.table(tidySet, "tidySet.txt", row.name=FALSE) to upload dataset
 
 ## Prepare second data set
 ##########################
