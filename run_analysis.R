@@ -1,4 +1,6 @@
-## Read the data: it is assumed that the datafiles are in the original directories and sub-directonries wich are:
+## Reading the data
+###################
+## It is assumed that the datafiles are in the original directories and sub-directonries wich are:
 ## "UCI HAR Dataset": features and activity labels files
 ## "UCI HAR Dataset/train": training subject, training set and lablels files
 ## "UCI HAR Dataset/test": test subject, test set and lablels files
@@ -68,9 +70,13 @@ names(testSet)[1:3]<-c("SetName", "SubjectId", "ActivityName")
 ## Merge the train and test sets
 tidySet<-tbl_df(rbind(trainSet, testSet))
 
+
 ## Prepare second data set
 ##########################
 
 groupTidySet<-group_by(tidySet, SetName, SubjectId, ActivityName)  ## SetName added to keep it in the summarise
 groupTidySet<-summarise_each(groupTidySet, funs(mean))
 
+## Write dataset to file
+setwd("../")
+write.table(groupTidySet, "tidySet.txt", row.name=FALSE)
