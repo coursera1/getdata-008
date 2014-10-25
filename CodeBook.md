@@ -5,7 +5,7 @@ output: html_document
 
 # Introduction
 
-The script "run_analysis.R" creates two dataset: "tidySet" and "groupedTidySet".
+The script "run_analysis.R" creates two dataset: "tidySet" and "groupedTidySet" (see README.md for more details)
 
 These datasets were constructed from the followind data:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
@@ -14,6 +14,7 @@ A full description is available at the site where the data was obtained:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
 These two sets were obtained by following the instructions given in the "Getting and Cleaning Data" course project:
+
 1. Merges the training and the test sets to create one data set.
 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 3. Uses descriptive activity names to name the activities in the data set
@@ -28,7 +29,7 @@ Each record contains the following variables:
 * SetName:  describes if the subject is from the "training" or "test" group
 * SubjectID: the id of the subject
 * ActivityName: the name of the activity the subject is performing
-* A 86-feature vector with the mean and standard deviation of time and frequency domain variables. They were selected by selecting all variables with "mean" or "std" in their names (case insensitive match).
+* A 86-feature vector with the mean and standard deviation of time and frequency domain variables. They were selected by matching all variables names with "mean" or "std" (case insensitive match).
 
 ## Names of the feature vector variables
 1. tBodyAcc-mean()-X
@@ -164,11 +165,11 @@ tBodyGyroMean
 tBodyGyroJerkMean
 
 # License:
-Use of this dataset in publications must be acknowledged by referencing the following publication [1] 
+Use of the original dataset in publications must be acknowledged by referencing the following publication [1] 
 
 [1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
 
 
-This dataset is distributed AS-IS and no responsibility implied or explicit can be addressed to the authors or their institutions for its use or misuse. Any commercial use is prohibited.
+The original dataset is distributed AS-IS and no responsibility implied or explicit can be addressed to the authors or their institutions for its use or misuse. Any commercial use is prohibited.
 
 Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012.
