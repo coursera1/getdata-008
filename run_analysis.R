@@ -80,3 +80,4 @@ groupTidySet<-summarise_each(groupTidySet, funs(mean))
 ## Write dataset to file
 setwd("../")
 write.table(groupTidySet, "tidySet.txt", row.name=FALSE)
+
