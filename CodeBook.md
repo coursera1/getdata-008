@@ -5,7 +5,7 @@ output: html_document
 
 # Introduction
 
-The script "run_analysis.R" creates two dataset: "tidySet" and "groupedTidySet" (see README.md for more details)
+The script "run_analysis.R" creates a tidy dataset "tidySet" (see README.md for more details)
 
 These datasets were constructed from the followind data:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
@@ -13,7 +13,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 A full description is available at the site where the data was obtained:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-These two sets were obtained by following the instructions given in the "Getting and Cleaning Data" course project:
+This set is obtained by following the instructions given in the "Getting and Cleaning Data" course project:
 
 1. Merges the training and the test sets to create one data set.
 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
@@ -24,100 +24,101 @@ These two sets were obtained by following the instructions given in the "Getting
 
 # Variables description
 
-Each record contains the following variables:
+Each record is contains the following variables:
 
 * SetName:  describes if the subject is from the "training" or "test" group
 * SubjectID: the id of the subject (between 1 and 30)
 * ActivityName: the name of the activity the subject is performing (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
-* A 86-feature vector with the mean and standard deviation of time and frequency domain variables. They were selected by matching all variables names with "mean" or "std" (case insensitive match). Features are normalized and bounded within [-1,1]
+* A 86-feature vector with the average (for each activity and subject) of the mean and standard deviation of time and frequency domain variables. They were selected by matching all variables names with "mean" or "std" (case insensitive match). Features are normalized and bounded within [-1,1]
 
 ## Names of the feature vector variables
-1. tBodyAcc-mean()-X
-2. tBodyAcc-mean()-Y
-3. tBodyAcc-mean()-Z
-4. tBodyAcc-std()-X
-5. tBodyAcc-std()-Y
-6. tBodyAcc-std()-Z
-7. tGravityAcc-mean()-X
-8. tGravityAcc-mean()-Y
-9. tGravityAcc-mean()-Z
-10. tGravityAcc-std()-X
-11. tGravityAcc-std()-Y
-12. tGravityAcc-std()-Z
-13. tBodyAccJerk-mean()-X
-14. tBodyAccJerk-mean()-Y
-15. tBodyAccJerk-mean()-Z
-16. tBodyAccJerk-std()-X
-17. tBodyAccJerk-std()-Y
-18. tBodyAccJerk-std()-Z
-19. tBodyGyro-mean()-X
-20. tBodyGyro-mean()-Y
-21. tBodyGyro-mean()-Z
-22. tBodyGyro-std()-X
-23. tBodyGyro-std()-Y
-24. tBodyGyro-std()-Z
-25. tBodyGyroJerk-mean()-X
-26. tBodyGyroJerk-mean()-Y
-27. tBodyGyroJerk-mean()-Z
-28. tBodyGyroJerk-std()-X
-29. tBodyGyroJerk-std()-Y
-30. tBodyGyroJerk-std()-Z
-31. tBodyAccMag-mean()
-32. tBodyAccMag-std()
-33. tGravityAccMag-mean()
-34. tGravityAccMag-std()
-35. tBodyAccJerkMag-mean()
-36. tBodyAccJerkMag-std()
-37. tBodyGyroMag-mean()
-38. tBodyGyroMag-std()
-39. tBodyGyroJerkMag-mean()
-40. tBodyGyroJerkMag-std()
-41. fBodyAcc-mean()-X
-42. fBodyAcc-mean()-Y
-43. fBodyAcc-mean()-Z
-44. fBodyAcc-std()-X
-45. fBodyAcc-std()-Y
-46. fBodyAcc-std()-Z
-47. fBodyAcc-meanFreq()-X
-48. fBodyAcc-meanFreq()-Y
-49. fBodyAcc-meanFreq()-Z
-50. fBodyAccJerk-mean()-X
-51. fBodyAccJerk-mean()-Y
-52. fBodyAccJerk-mean()-Z
-53. fBodyAccJerk-std()-X
-54. fBodyAccJerk-std()-Y
-55. fBodyAccJerk-std()-Z
-56. fBodyAccJerk-meanFreq()-X
-57. fBodyAccJerk-meanFreq()-Y
-58. fBodyAccJerk-meanFreq()-Z
-59. fBodyGyro-mean()-X
-60. fBodyGyro-mean()-Y
-61. fBodyGyro-mean()-Z
-62. fBodyGyro-std()-X
-63. fBodyGyro-std()-Y
-64. fBodyGyro-std()-Z
-65. fBodyGyro-meanFreq()-X
-66. fBodyGyro-meanFreq()-Y
-67. fBodyGyro-meanFreq()-Z
-68. fBodyAccMag-mean()
-69. fBodyAccMag-std()
-70. fBodyAccMag-meanFreq()
-71. fBodyBodyAccJerkMag-mean()
-72. fBodyBodyAccJerkMag-std()
-73. fBodyBodyAccJerkMag-meanFreq()
-74. fBodyBodyGyroMag-mean()
-75. fBodyBodyGyroMag-std()
-76. fBodyBodyGyroMag-meanFreq()
-77. fBodyBodyGyroJerkMag-mean()
-78. fBodyBodyGyroJerkMag-std()
-79. fBodyBodyGyroJerkMag-meanFreq()
-80. angle(tBodyAccMean,gravity)
-81. angle(tBodyAccJerkMean),gravityMean)
-82. angle(tBodyGyroMean,gravityMean)
-83. angle(tBodyGyroJerkMean,gravityMean)
-84. angle(X,gravityMean)
-85. angle(Y,gravityMean)
-86. angle(Z,gravityMean)
+1. avg-tBodyAcc-mean()-X
+2. avg-tBodyAcc-mean()-Y
+3. avg-tBodyAcc-mean()-Z
+4. avg-tBodyAcc-std()-X
+5. avg-tBodyAcc-std()-Y
+6. avg-tBodyAcc-std()-Z
+7. avg-tGravityAcc-mean()-X
+8. avg-tGravityAcc-mean()-Y
+9. avg-tGravityAcc-mean()-Z
+10. avg-tGravityAcc-std()-X
+11. avg-tGravityAcc-std()-Y
+12. avg-tGravityAcc-std()-Z
+13. avg-tBodyAccJerk-mean()-X
+14. avg-tBodyAccJerk-mean()-Y
+15. avg-tBodyAccJerk-mean()-Z
+16. avg-tBodyAccJerk-std()-X
+17. avg-tBodyAccJerk-std()-Y
+18. avg-tBodyAccJerk-std()-Z
+19. avg-tBodyGyro-mean()-X
+20. avg-tBodyGyro-mean()-Y
+21. avg-tBodyGyro-mean()-Z
+22. avg-tBodyGyro-std()-X
+23. avg-tBodyGyro-std()-Y
+24. avg-tBodyGyro-std()-Z
+25. avg-tBodyGyroJerk-mean()-X
+26. avg-tBodyGyroJerk-mean()-Y
+27. avg-tBodyGyroJerk-mean()-Z
+28. avg-tBodyGyroJerk-std()-X
+29. avg-tBodyGyroJerk-std()-Y
+30. avg-tBodyGyroJerk-std()-Z
+31. avg-tBodyAccMag-mean()
+32. avg-tBodyAccMag-std()
+33. avg-tGravityAccMag-mean()
+34. avg-tGravityAccMag-std()
+35. avg-tBodyAccJerkMag-mean()
+36. avg-tBodyAccJerkMag-std()
+37. avg-tBodyGyroMag-mean()
+38. avg-tBodyGyroMag-std()
+39. avg-tBodyGyroJerkMag-mean()
+40. avg-tBodyGyroJerkMag-std()
+41. avg-fBodyAcc-mean()-X
+42. avg-fBodyAcc-mean()-Y
+43. avg-fBodyAcc-mean()-Z
+44. avg-fBodyAcc-std()-X
+45. avg-fBodyAcc-std()-Y
+46. avg-fBodyAcc-std()-Z
+47. avg-fBodyAcc-meanFreq()-X
+48. avg-fBodyAcc-meanFreq()-Y
+49. avg-fBodyAcc-meanFreq()-Z
+50. avg-fBodyAccJerk-mean()-X
+51. avg-fBodyAccJerk-mean()-Y
+52. avg-fBodyAccJerk-mean()-Z
+53. avg-fBodyAccJerk-std()-X
+54. avg-fBodyAccJerk-std()-Y
+55. avg-fBodyAccJerk-std()-Z
+56. avg-fBodyAccJerk-meanFreq()-X
+57. avg-fBodyAccJerk-meanFreq()-Y
+58. avg-fBodyAccJerk-meanFreq()-Z
+59. avg-fBodyGyro-mean()-X
+60. avg-fBodyGyro-mean()-Y
+61. avg-fBodyGyro-mean()-Z
+62. avg-fBodyGyro-std()-X
+63. avg-fBodyGyro-std()-Y
+64. avg-fBodyGyro-std()-Z
+65. avg-fBodyGyro-meanFreq()-X
+66. avg-fBodyGyro-meanFreq()-Y
+67. avg-fBodyGyro-meanFreq()-Z
+68. avg-fBodyAccMag-mean()
+69. avg-fBodyAccMag-std()
+70. avg-fBodyAccMag-meanFreq()
+71. avg-fBodyBodyAccJerkMag-mean()
+72. avg-fBodyBodyAccJerkMag-std()
+73. avg-fBodyBodyAccJerkMag-meanFreq()
+74. avg-fBodyBodyGyroMag-mean()
+75. avg-fBodyBodyGyroMag-std()
+76. avg-fBodyBodyGyroMag-meanFreq()
+77. avg-fBodyBodyGyroJerkMag-mean()
+78. avg-fBodyBodyGyroJerkMag-std()
+79. avg-fBodyBodyGyroJerkMag-meanFreq()
+80. avg-angle(tBodyAccMean,gravity)
+81. avg-angle(tBodyAccJerkMean),gravityMean)
+82. avg-angle(tBodyGyroMean,gravityMean)
+83. avg-angle(tBodyGyroJerkMean,gravityMean)
+84. avg-angle(X,gravityMean)
+85. avg-angle(Y,gravityMean)
+86. avg-angle(Z,gravityMean)
+
 
 
 # Feature categories
@@ -156,11 +157,13 @@ The set of variables that were extracted from the original dataset are:
 
 Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
 
-gravityMean
-tBodyAccMean
-tBodyAccJerkMean
-tBodyGyroMean
-tBodyGyroJerkMean
+* gravityMean
+* tBodyAccMean
+* tBodyAccJerkMean
+* tBodyGyroMean
+* tBodyGyroJerkMean
+
+All of these variables were then averaged for each subject and activity.
 
 # License:
 Use of the original dataset in publications must be acknowledged by referencing the following publication [1] 

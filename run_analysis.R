@@ -77,6 +77,12 @@ tidySet<-tbl_df(rbind(trainSet, testSet))
 groupTidySet<-group_by(tidySet, SetName, SubjectId, ActivityName)  ## SetName added to keep it in the summarise
 groupTidySet<-summarise_each(groupTidySet, funs(mean))
 
+## Rename the variable with prepended "avg-"
+newColName<-names(groupTidySet)
+newColName[4:length(newColName)]<-paste("avg-", newColName[4:length(newColName)], sep="")
+names(groupTidySet)<-newColName
+
+
 ## Write dataset to file
 setwd("../")
 write.table(groupTidySet, "tidySet.txt", row.name=FALSE)

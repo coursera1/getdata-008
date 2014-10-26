@@ -30,5 +30,6 @@ Here are the main steps of the script:
 * We merge the train and test sets to form the *tidySet*
 * We then prepare the second dataset by grouping on the setName, SubjectID and ActivityName
 * We obtain the second dataset *groupedTidySet* by summarising each column variables with the mean function
+* Finaly, the tidy set is written to a file
 
 
