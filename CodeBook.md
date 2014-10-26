@@ -27,9 +27,9 @@ These two sets were obtained by following the instructions given in the "Getting
 Each record contains the following variables:
 
 * SetName:  describes if the subject is from the "training" or "test" group
-* SubjectID: the id of the subject
-* ActivityName: the name of the activity the subject is performing
-* A 86-feature vector with the mean and standard deviation of time and frequency domain variables. They were selected by matching all variables names with "mean" or "std" (case insensitive match).
+* SubjectID: the id of the subject (between 1 and 30)
+* ActivityName: the name of the activity the subject is performing (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
+* A 86-feature vector with the mean and standard deviation of time and frequency domain variables. They were selected by matching all variables names with "mean" or "std" (case insensitive match). Features are normalized and bounded within [-1,1]
 
 ## Names of the feature vector variables
 1. tBodyAcc-mean()-X
@@ -118,8 +118,6 @@ Each record contains the following variables:
 84. angle(X,gravityMean)
 85. angle(Y,gravityMean)
 86. angle(Z,gravityMean)
-
-- Features are normalized and bounded within [-1,1].
 
 
 # Feature categories
